@@ -1,0 +1,17 @@
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/botones';
+@import 'base/darkmode';
+
+// LAYOUT
+
+@import 'layout/header';
+@import 'layout/navegator';
+@import 'layout/us';
+@import 'layout/properties';
+@import 'layout/contact';
+@import 'layout/double-section';
+@import 'layout/footer';

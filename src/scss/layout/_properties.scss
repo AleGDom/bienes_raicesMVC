@@ -1,0 +1,39 @@
+.properties{
+    @include tablet{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    }
+}
+.property-content{
+    background-color: $gris;
+    padding: 2rem;
+
+    h3,p{
+        margin: 0;
+    }
+    .precio{
+        color: $verde;
+        font-weight: bold;
+        font-size: 3rem;
+    }
+}
+
+.property-char{
+    padding: 0;
+    display: flex;
+    max-width: 40rem;
+    li{
+        display: flex;
+        align-items: flex-end;
+        gap: 1.5rem;
+        flex: 1;
+    }
+    p{
+        margin: 0;
+        font-weight: bold;
+    }
+    img{
+        width: 5rem;
+    }
+}

@@ -1,0 +1,14 @@
+.icons-us{
+    @include tablet{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.icon{
+    text-align: center;
+    img{
+        height: 10rem;
+    }
+
+}

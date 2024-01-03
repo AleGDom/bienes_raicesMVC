@@ -1,0 +1,81 @@
+
+.header{
+    background-color:$grisOscuro;
+    @include tablet{
+        min-height: 70rem;
+    }
+}
+
+.webp .inicio{
+    background-image: url('../img/header.webp');
+}
+.no-webp .inicio{
+    background-image: url('../img/header.jgp');
+}
+
+.inicio{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.content-header{
+    padding: 3rem 0 2rem 0;
+    h1{
+        text-align: left;
+        color: $blanco;
+        max-width: 60rem;
+        font-weight: bold;
+
+    }
+
+    @include tablet{
+        min-height: 65rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.darkmode-btn{
+    width: 5rem;
+    margin: 1.5rem auto;
+    filter: invert(10);
+    &:hover{
+        cursor: pointer;
+    }
+    @include tablet{
+        width: 3rem;
+        margin: 0 0 1rem auto;
+    }
+    
+}
+
+.barras-btn{
+    width: 5rem;
+    margin: 1.5rem auto;
+    @include tablet{
+        width: 3rem;
+        margin: 0 0 1rem auto;
+    }
+    @include tablet{
+        display: none;
+    }
+}
+
+
+
+
+.bar{
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.navegator{
+    @include tablet{
+        display: flex;
+        gap: 1.4rem;
+        
+    }
+}

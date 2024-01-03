@@ -1,0 +1,23 @@
+.navegator{
+    opacity: 0;
+    height: 0;
+    a{
+        color: $blanco;
+        display: block;
+        text-align: center;
+        font-size: 1.8rem;
+        &:hover{
+            color: $verde;
+        }
+    }
+
+    @include tablet{
+        opacity: 1;
+        height: auto;
+    }
+}
+
+.visible{
+    opacity: 1;
+    height: auto;
+}

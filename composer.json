@@ -1,0 +1,17 @@
+{
+    "name": "alexi/bienesraices_inicio",
+    "description": "a new project w/ MVC",
+    "autoload": {
+        "psr-4": {
+            "Model\\": "./models",
+            "MVC\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexis Dominguez",
+            "email": "alexis2033ag@outlook.com"
+        }
+    ],
+    "require": {}
+}
