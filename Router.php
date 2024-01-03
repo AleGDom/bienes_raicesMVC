@@ -4,7 +4,7 @@ class Router{
     protected $getpaths=[];
     protected $postpaths=[];
     public function get(String $url,$fn){
-        $getpaths[$url]=$fn;
+        $this->getpaths[$url]=$fn;
     }
     public function ValidateURL(){
         $url=($_SERVER['PATH_INFO']) ?? null;
@@ -18,6 +18,10 @@ class Router{
         } else{
             echo "ERROR 404";
         }
+    }
+
+    public function getd(){
+        var_dump($this->getpaths);
     }
 
     public function render($dir,$var=[]){
