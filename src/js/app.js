@@ -8,7 +8,7 @@ function initApps(){
 }
 
 function verifytheme(){
-    if(localStorage.getItem('darkmode',true)){
+    if(localStorage.getItem('darkmode')==='on'){
         document.body.classList.add('darkmode');
     } else{
         document.body.classList.remove('darkmode');
@@ -34,9 +34,9 @@ function darkmode(){
 function ChangeTheme(){
     document.body.classList.toggle('darkmode');
     if(document.body.classList.contains('darkmode')){
-        localStorage.setItem('darkmode',true);
+        localStorage.setItem('darkmode','on');
     } else{
-        localStorage.setItem('darkmode',false);
+        localStorage.setItem('darkmode','off');
 
     }
 }

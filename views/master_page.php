@@ -8,10 +8,10 @@
     <title>Bienes Raices</title>
 </head>
 <body>
-    <header class="header inicio">
+    <header class="header <?php echo $inicio ? 'inicio' :'';?>">
         <div class="content-header contenedor">
             <div class="bar">
-                <a href="index.html">
+                <a href="/">
                     <img src="build/img/logo.svg" alt="Logo-bienes-raices">
                 </a>
                 <div class="bar-right">
@@ -21,14 +21,18 @@
                     </div>
                     
                     <nav class="navegator">
-                        <a href="#">Nosotros</a>
-                        <a href="#">Anuncios</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Contacto</a>
+                        <a href="nosotros">Nosotros</a>
+                        <a href="anuncios">Anuncios</a>
+                        <a href="blog">Blog</a>
+                        <a href="contacto">Contacto</a>
                     </nav>
                 </div>  
             </div>
-            <h1>Venta de Casas y Departamentos Exclusivos De Lujo</h1>
+            <?php  
+            if($inicio){
+                echo "<h1>Venta de Casas y Departamentos Exclusivos De Lujo</h1>";
+            }
+            ?>
         </div>
     </header>
 

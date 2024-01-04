@@ -8,4 +8,22 @@
     .property-content{
         background-color: $grisOscuro;
     }
+
+    .form{
+        legend{
+            
+            color: $gris;
+        }
+        fieldset{
+            border: 1px solid $gris;
+        }
+        label{
+            color: $gris;
+        }
+        textarea,select, input:not([type=submit]){
+            background-color: $grisOscuro;
+            color: $gris;
+        }
+    
+    }
 }

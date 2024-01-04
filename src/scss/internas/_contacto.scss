@@ -1,0 +1,32 @@
+.form{
+    legend{
+        font-size: 2rem;
+        color: $grisOscuro;
+    }
+    fieldset{
+        border: 1px solid $grisOscuro;
+    }
+    label{
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-weight: bold;
+        
+    }
+    textarea,select, input:not([type=submit]){
+        width: 100%;
+        border-radius: 1.5rem;
+        padding: 1rem;
+        border: 1px solid $gris;
+        margin-bottom: 1.5rem;
+    }
+    .opt-contact{
+        display: flex;
+        max-width: 30rem;
+         
+    }
+    p{
+        font-size: 1.6rem;
+    }
+
+
+}

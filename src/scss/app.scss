@@ -7,7 +7,6 @@
 @import 'base/darkmode';
 
 // LAYOUT
-
 @import 'layout/header';
 @import 'layout/navegator';
 @import 'layout/us';
@@ -15,3 +14,7 @@
 @import 'layout/contact';
 @import 'layout/double-section';
 @import 'layout/footer';
+
+//INTERNAS
+@import 'internas/nosotros';
+@import 'internas/contacto';

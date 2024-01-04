@@ -7,7 +7,7 @@ class Router{
         $this->getpaths[$url]=$fn;
     }
     public function ValidateURL(){
-        $url=($_SERVER['PATH_INFO']) ?? null;
+        $url=($_SERVER['PATH_INFO']) ?? '/';
         $method=$_SERVER['REQUEST_METHOD'];
         if($method=='GET'){
             $fn=$this->getpaths[$url] ?? NULL;

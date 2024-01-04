@@ -1,9 +1,7 @@
 
 .header{
     background-color:$grisOscuro;
-    @include tablet{
-        min-height: 70rem;
-    }
+    
 }
 
 .webp .inicio{
@@ -17,6 +15,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    @include tablet{
+        min-height: 70rem;
+    }
+
+    .content-header{
+        @include tablet{
+            min-height: 65rem;
+        }
+    }
 }
 .content-header{
     padding: 3rem 0 2rem 0;
@@ -29,7 +36,7 @@
     }
 
     @include tablet{
-        min-height: 65rem;
+       
         display: flex;
         flex-direction: column;
         justify-content: space-between;

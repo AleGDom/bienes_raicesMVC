@@ -1,0 +1,14 @@
+.us{
+    h3{
+        margin: 0;
+    }
+    picture{
+        display: flex;
+        align-items: center;
+    }
+    @include tablet{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
