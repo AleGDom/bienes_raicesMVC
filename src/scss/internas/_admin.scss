@@ -1,0 +1,29 @@
+.table-admin{
+    width: 100%;
+    th{
+        background-color: $verde;
+        color: $blanco;
+    }
+    th,td{
+        text-align: center;
+    }
+    td{
+        padding: 2rem;
+    }
+    img{
+        width: 10rem;
+        margin: 0 auto;
+    }
+}
+
+.alert{
+    text-align: center;
+    color: $gris;
+    margin: 1rem 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error{
+    background-color: rgba(241, 11, 11, 0.836);
+}

@@ -2,7 +2,8 @@
 
 require '/Users/alexi/Desktop/bienesraices_inicio/includes/app.php';
 
-    use MVC\Router;
+use Controller\AdminController;
+use MVC\Router;
     use Controller\PagesController;
     
     $router=new Router();
@@ -11,6 +12,11 @@ require '/Users/alexi/Desktop/bienesraices_inicio/includes/app.php';
     $router->get('/anuncios',[PagesController::class,'anuncios']);
     $router->get('/blog',[PagesController::class,'blog']);
     $router->get('/contacto',[PagesController::class,'contacto']);
+
+    //ADMIN
+    $router->get('/admin',[AdminController::class,'index']);
+    $router->get('/propiedad/crear',[AdminController::class,'crear']);
+    $router->post('/propiedad/crear',[AdminController::class,'crear']);
     $router->ValidateURL();
 
 ?>

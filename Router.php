@@ -6,11 +6,16 @@ class Router{
     public function get(String $url,$fn){
         $this->getpaths[$url]=$fn;
     }
+    public function post(String $url,$fn){
+        $this->postpaths[$url]=$fn;
+    }
     public function ValidateURL(){
         $url=($_SERVER['PATH_INFO']) ?? '/';
         $method=$_SERVER['REQUEST_METHOD'];
         if($method=='GET'){
             $fn=$this->getpaths[$url] ?? NULL;
+        } else{
+            $fn=$this->postpaths[$url] ?? NULL;
         }
 
         if($fn){

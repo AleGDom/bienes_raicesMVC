@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="build/css/app.css" as="style">
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="preload" href="/build/css/app.css" as="style">
+    <link rel="stylesheet" href="/build/css/app.css">
     <title>Bienes Raices</title>
 </head>
 <body>
@@ -12,19 +12,19 @@
         <div class="content-header contenedor">
             <div class="bar">
                 <a href="/">
-                    <img src="build/img/logo.svg" alt="Logo-bienes-raices">
+                    <img src="/build/img/logo.svg" alt="Logo-bienes-raices">
                 </a>
                 <div class="bar-right">
                     <div class="bar-icons">
-                        <img src="build/img/barras.svg" alt="" class="barras-btn">
-                        <img src="build/img/dark-mode.svg" alt="" class="darkmode-btn">
+                        <img src="/build/img/barras.svg" alt="" class="barras-btn">
+                        <img src="/build/img/dark-mode.svg" alt="" class="darkmode-btn">
                     </div>
                     
                     <nav class="navegator">
-                        <a href="nosotros">Nosotros</a>
-                        <a href="anuncios">Anuncios</a>
-                        <a href="blog">Blog</a>
-                        <a href="contacto">Contacto</a>
+                        <a href="/nosotros">Nosotros</a>
+                        <a href="/anuncios">Anuncios</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contacto</a>
                     </nav>
                 </div>  
             </div>
@@ -50,6 +50,6 @@
     </div>
 </footer>
 </body>
-<script src="build/js/bundle.min.js"></script>
+<script src="/build/js/bundle.min.js"></script>
 </html>
 
