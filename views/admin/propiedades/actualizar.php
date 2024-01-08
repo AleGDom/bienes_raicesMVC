@@ -1,5 +1,5 @@
 <main class="seccion contenedor">
-    <h2>Crear</h2>
+    <h2>Actualizar</h2>
     <a href="/admin" class="boton-verde">Volver</a>
 
     <?php foreach ($errores as $error): ?>

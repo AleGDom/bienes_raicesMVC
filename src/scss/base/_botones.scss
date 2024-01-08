@@ -24,3 +24,8 @@
     padding: 1.5rem 0;
 
 }
+
+.boton-aqua{
+    @include button(inline-block,darkcyan);
+    
+}

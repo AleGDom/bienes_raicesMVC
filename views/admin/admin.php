@@ -1,6 +1,8 @@
 <main class="seccion contenedor">
     <h1>Administrador de Bienes Raices</h1>
     <a href="/propiedad/crear" class="boton-verde">Crear Propiedad</a>
+    <a href="/vendedor/crear" class="boton-aqua">Crear Vendedor</a>
+
     <h2>Propiedades</h2>
     <table class="table-admin">
         <thead>
@@ -34,7 +36,7 @@
 
     <h2>Vendedores</h2>
 
-    <table class="table-admin">
+    <table class="table-admin sellers">
         <thead>
             <tr>
                 <th>Id</th>
@@ -52,7 +54,7 @@
                 <td><?php echo $seller->apellido ?></td>
                 <td><?php echo $seller->telefono ?></td>
                 <td>
-                    <a href="/propiedad/actualizar?id=<?php echo $property->id ?>" class="boton-amarillo-block">Actualizar</a>
+                    <a href="/vendedor/actualizar?id=<?php echo $seller->id ?>" class="boton-amarillo-block">Actualizar</a>
                     <form action="/vendedor/eliminar" method="POST">
                         <input type="hidden" name="id" value="<?php echo $seller->id ?>">
                         <input type="submit" value="Eliminar" class="boton-rojo-block">
