@@ -14,5 +14,7 @@
             "email": "alexis2033ag@outlook.com"
         }
     ],
-    "require": {}
+    "require": {
+        "intervention/image": "2.7"
+    }
 }

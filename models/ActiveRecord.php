@@ -4,69 +4,21 @@
     class ActiveRecord{
         public static $db;
         protected static $errores=[];
-        protected static $tabla='propiedades';
-        protected static $campos=['id','titulo','precio','imagen','descripcion','habitaciones','wc','estacionamiento','creado','vendedores_id'];
+        protected static $tabla='';
+        protected static $campos=[];
 
 
-        protected $id;
-        protected $titulo;
-        protected $precio;
-        protected $imagen;
-        protected $descripcion;
-        protected $habitaciones;
-        protected $wc;
-        protected $estacionamiento;
-        protected $creado;
-        protected $vendedores_id;
+        public $id;
+        
 
-        public function __construct($args=[])
-        {
-            $this->id=$args['id'] ?? '';
-            $this->titulo=$args['titulo'] ?? '';
-            $this->precio=$args['precio'] ?? '';
-            $this->imagen=$args['imagen'] ?? '';
-            $this->descripcion=$args['descripcion'] ?? '';
-            $this->habitaciones=$args['habitaciones'] ?? '';
-            $this->wc=$args['wc'] ?? '';
-            $this->estacionamiento=$args['estacionamiento'] ?? '';
-            $this->creado=$args['creado'] ?? date('Y/m/d');
-            $this->vendedores_id=$args['vendedores_id'] ?? '';
-
-        }
 
         public function validate(){
-            if(!$this->titulo){
-                self::$errores[]='Es necesario escribir un titulo';
-            }
-            if(!$this->precio){
-                self::$errores[]='Es necesario escribir un Precio';
-            }
-            if(!$this->imagen){
-                self::$errores[]='Es necesario agregar una imagen';
-            }
-            if(!$this->descripcion){
-                self::$errores[]='Es necesario agregar una descripcion';
-            }
-            if(!$this->habitaciones){
-                self::$errores[]='Es necesario escribir la cantidad de habitaciones';
-            }
-            if(!$this->wc){
-                self::$errores[]='Es necesario escribir la cantidad de WC';
-            }
-            if(!$this->estacionamiento){
-                self::$errores[]='Es necesario escribir la cantidad de estacionamiento';
-            }
-            if(!$this->vendedores_id){
-                self::$errores[]='Elegir un vendedor';
-            }
-
-            return self::$errores;
+            
         }
 
         /**
          * C R U D
          */
-
         public function save(){
             if($this->id){
                 $this->update();
@@ -76,20 +28,47 @@
         }
 
         protected function update(){
+            $attributes=$this->sanitize();
+            $array=[];
+            
+            foreach ($attributes as $key => $value) {
+                $array[] = $key." = '".$value."'";
+            }
+            $query="UPDATE ".static::$tabla." SET " ;
+            $query.=join(', ',$array);
+            $query.=" WHERE id=".$this->id;
+            $result=self::$db->query($query);
 
+            if($result){
+                header('Location: /admin?result=2');
+            }
         }
         protected function create(){
             $attributes=$this->sanitize();
-            $query="INSERT INTO ".self::$tabla." (";
+            $query="INSERT INTO ".static::$tabla." (";
             $query.=join(', ',array_keys($attributes));
             $query.=") VALUES ('";
             $query.=join("','",array_values($attributes));
             $query.="')";
-            debuguear($query);
-            
+
+            $result=self::$db->query($query);
+
+            if($result){
+                header('Location: /admin?result=1');
+            }
+             
         }
 
-        //Utilities
+        public function delete(){
+            $query="DELETE FROM ".static::$tabla." WHERE id=".$this->id;
+            $result=self::$db->query($query);
+
+            if($result){
+                header('Location: /admin');
+            }
+        }
+
+    //Utilities
 
         protected function sanitize(){
             $attributes=$this->attributes();
@@ -112,6 +91,54 @@
 
             return $attributes;
         }
+
+        
+    
+
+    //GENERAL QUERYS ID
+
+    public static function all(){
+        $query= " SELECT * FROM ". static::$tabla;
+        $result=self::querySQL($query);
+        return $result;
+    }
+    public static function find($id){
+        $query="SELECT * FROM ".static::$tabla." WHERE id=".$id;
+        $result = self::querySQL($query);
+
+        return array_shift($result);
+        
+    }
+    protected  static function querySQL($query){
+        $properties = self::$db->query($query);
+        $result=[];
+            while ($property = $properties->fetch_assoc()) {
+                $result[]=self::createObject($property);
+            }
+          $properties->free();  
+        return $result;  
+    }
+
+    protected static function createObject($property){
+        $object = new static($property);
+
+        return $object;
+    }
+
+    public function syncup($args=[]){
+        foreach ($args as $key => $value) {
+            if(property_exists($this,$key) && !is_null($value)){
+                $this->$key = $value;
+            }
+            # code...
+        }
+    }
+    public function setImagen($imageName){
+
+    }
+    
+
+
 
 
     }

@@ -15,8 +15,14 @@ use MVC\Router;
 
     //ADMIN
     $router->get('/admin',[AdminController::class,'index']);
+    //CREATE
     $router->get('/propiedad/crear',[AdminController::class,'crear']);
     $router->post('/propiedad/crear',[AdminController::class,'crear']);
+    //UPDATE
+    $router->get('/propiedad/actualizar',[AdminController::class,'actualizar']);
+    $router->post('/propiedad/actualizar',[AdminController::class,'actualizar']);
+
+    $router->post('/propiedad/eliminar',[AdminController::class,'eliminar']);
     $router->ValidateURL();
 
 ?>

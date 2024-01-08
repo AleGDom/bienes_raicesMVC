@@ -8,6 +8,6 @@
     
     <form class="form" method="post" enctype="multipart/form-data">
         <?php include 'formulario.php'; ?>
-        <input type="submit" value="Crear Propiedad" class="boton-verde">
+        <input type="submit" value="Actualizar Propiedad" class="boton-verde">
     </form>
 </main>

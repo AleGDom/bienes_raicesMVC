@@ -35,7 +35,7 @@ class Router{
         }
 
         ob_start();
-
+        
             include __DIR__.'/views/'.$dir.'.php';
         $contenido=ob_get_clean();
 

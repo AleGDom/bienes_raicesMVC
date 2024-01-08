@@ -14,3 +14,13 @@
     @include button(block,$amarillo);
 
 }
+.boton-rojo{
+    @include button(inline-block,red);
+    
+}
+.boton-rojo-block{
+    @include button(block,red);
+    width: 100%;
+    padding: 1.5rem 0;
+
+}
