@@ -1,3 +1,12 @@
+<?php 
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    $auth=$_SESSION['login'] ?? false;
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +16,7 @@
     <link rel="stylesheet" href="/build/css/app.css">
     <title>Bienes Raices</title>
 </head>
-<body>
+<body class="darkmode">
     <header class="header <?php echo $inicio ? 'inicio' :'';?>">
         <div class="content-header contenedor">
             <div class="bar">
@@ -25,6 +34,7 @@
                         <a href="/anuncios">Anuncios</a>
                         <a href="/blog">Blog</a>
                         <a href="/contacto">Contacto</a>
+                        <?php echo $auth ? '<a href="/logout">Cerrar Sesion</a>' : '<a href="/login">Iniciar Sesion</a>'; ?>
                     </nav>
                 </div>  
             </div>

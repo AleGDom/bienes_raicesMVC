@@ -10,7 +10,15 @@ class Router{
         $this->postpaths[$url]=$fn;
     }
     public function ValidateURL(){
+        $urlProtected=['/admin','/propiedad/crear','/propiedad/actualizar','/propiedad/eliminar','/vendedor/crear','/vendedor/actualizar','/vendedor/eliminar'];
         $url=($_SERVER['PATH_INFO']) ?? '/';
+
+        session_start();
+        $auth=$_SESSION['login'] ?? false;
+
+        if(in_array($url,$urlProtected) && !$auth){
+            header('Location: /login');
+        }
         $method=$_SERVER['REQUEST_METHOD'];
         if($method=='GET'){
             $fn=$this->getpaths[$url] ?? NULL;

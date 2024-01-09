@@ -38,6 +38,11 @@ use Controller\SellersController;
 
     //Login
     $router->get('/login',[LoginController::class,'login']);
+    $router->post('/login',[LoginController::class,'login']);
+
+    //Logout
+    $router->get('/logout',[LoginController::class,'logout']);
+
 
     $router->ValidateURL();
 

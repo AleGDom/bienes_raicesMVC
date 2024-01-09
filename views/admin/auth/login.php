@@ -1,7 +1,9 @@
 <main class="seccion contenedor contenido-centrado">
     <h1>Login</h1>
-
-    <form class="form" method="post"> 
+    <?php foreach ($errores as $error): ?>
+        <div class="alert error"> <?php echo $error ?> </div>
+    <?php endforeach; ?>
+    <form class="form" method="POST"> 
         <fieldset>
             <legend>Iniciar Sesion</legend>
 
