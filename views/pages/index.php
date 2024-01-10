@@ -29,34 +29,7 @@
 <section class="contenedor seccion">
     <h2>Casas y Depas en Venta</h2>
 
-    <div class="properties">
-        <div class="property">
-            <picture>
-                <source srcset="build/img/anuncio1.webp" type="image/webp">
-                <img src="build/img/anuncio1.jpg" alt="Propiedad">
-            </picture>
-            <div class="property-content">
-                <h3>Hermosa casa en el lago</h3>
-                <p>Casa en el lago con excelente vista, acabados de lujo en un excelente precio</p>
-                <p class="precio">$3,000,000</p>
-                
-                <ul class="property-char">
-                    <li>
-                        <img src="build/img/icono_wc.svg" alt="WC-icon">
-                        <p>3</p>
-                    </li>
-                    <li>
-                        <img src="build/img/icono_dormitorio.svg" alt="WC-icon">
-                        <p>5</p>
-                    </li>
-                    <li>
-                        <img src="build/img/icono_estacionamiento.svg" alt="WC-icon">
-                        <p>2</p>
-                    </li>
-                </ul>
-                <a href="#" class="boton-amarillo-block">Ver propiedad</a>
-            </div>
-        </div>
+        <?php include 'listado.php' ?>
     </div>
     <div class="to-right">
         <a href="#" class="boton-verde">Ver todas</a>

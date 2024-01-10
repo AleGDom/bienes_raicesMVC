@@ -109,6 +109,13 @@
         return array_shift($result);
         
     }
+
+    public static function get($limit){
+        $query= " SELECT * FROM ". static::$tabla." LIMIT ". $limit;
+        $result = self::querySQL($query);
+
+        return $result;
+    }
     protected  static function querySQL($query){
         $properties = self::$db->query($query);
         $result=[];

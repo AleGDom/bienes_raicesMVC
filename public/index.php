@@ -14,6 +14,7 @@ use Controller\SellersController;
     $router->get('/anuncios',[PagesController::class,'anuncios']);
     $router->get('/blog',[PagesController::class,'blog']);
     $router->get('/contacto',[PagesController::class,'contacto']);
+    $router->post('/contacto',[PagesController::class,'contacto']);
 
     //ADMIN
     $router->get('/admin',[AdminController::class,'index']);
